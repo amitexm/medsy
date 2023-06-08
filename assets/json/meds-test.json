@@ -1,0 +1,787 @@
+[
+  {
+    "dc": 1,
+    "gn": "Aceclofenac 100mg and Paracetamol 325mg Tablets",
+    "us": "10's",
+    "mrp": 10,
+    "avl": 1
+  },
+  {
+    "dc": 2,
+    "gn": "Aceclofenac Tablets IP 100 mg",
+    "us": "10's",
+    "mrp": 8,
+    "avl": 1
+  },
+  {
+    "dc": 3,
+    "gn": "Pregabalin Capsules IP 75 mg",
+    "us": "10's",
+    "mrp": 22,
+    "avl": 1
+  },
+  {
+    "dc": 5,
+    "gn": "Aspirin Gastro-resistant Tablets IP 150 mg",
+    "us": "14's",
+    "mrp": 5,
+    "avl": 0
+  },
+  {
+    "dc": 6,
+    "gn": "Chlorzoxazone 500mg, Diclofenac 50mg and Paracetamol 325mg Tablets",
+    "us": "10's",
+    "mrp": 25,
+    "avl": 1
+  },
+  {
+    "dc": 7,
+    "gn": "Diclofenac Gel IP (Diclofenac Diethylamine 1.16%w/w)",
+    "us": "15 g",
+    "mrp": 12,
+    "avl": 1
+  },
+  {
+    "dc": 8,
+    "gn": "Serratiopeptidase 10mg and Diclofenac Sodium 50mg Tablets",
+    "us": "10's",
+    "mrp": 15,
+    "avl": 0
+  },
+  {
+    "dc": 9,
+    "gn": "Diclofenac Sodium Prolonged Release Tablets IP 100 mg",
+    "us": "10's",
+    "mrp": 12,
+    "avl": 1
+  },
+  {
+    "dc": 10,
+    "gn": "Diclofenac Sodium Injection IP 25mg per ml",
+    "us": "3 ml",
+    "mrp": 4,
+    "avl": 1
+  },
+  {
+    "dc": 11,
+    "gn": "Diclofenac Gastro-Resistant Tablets IP 50 mg",
+    "us": "10's",
+    "mrp": 5,
+    "avl": 1
+  },
+  {
+    "dc": 12,
+    "gn": "Etoricoxib Tablets IP 120 mg",
+    "us": "10's",
+    "mrp": 38,
+    "avl": 0
+  },
+  {
+    "dc": 13,
+    "gn": "Etoricoxib Tablets IP 90 mg",
+    "us": "10's",
+    "mrp": 31,
+    "avl": 1
+  },
+  {
+    "dc": 14,
+    "gn": "Ibuprofen 400mg and Paracetamol 325mg Tablets IP",
+    "us": "10's",
+    "mrp": 8,
+    "avl": 1
+  },
+  {
+    "dc": 15,
+    "gn": "Ibuprofen Tablets IP 200 mg",
+    "us": "10's",
+    "mrp": 3,
+    "avl": 0
+  },
+  {
+    "dc": 16,
+    "gn": "Ibuprofen Tablets IP 400 mg",
+    "us": "15's",
+    "mrp": 8,
+    "avl": 1
+  },
+  {
+    "dc": 17,
+    "gn": "Indomethacin Capsules IP 25 mg",
+    "us": "10's",
+    "mrp": 13,
+    "avl": 0
+  },
+  {
+    "dc": 18,
+    "gn": "Azithromycin Tablets IP 250 mg",
+    "us": "6's",
+    "mrp": 45,
+    "avl": 0
+  },
+  {
+    "dc": 19,
+    "gn": "Nimesulide 100mg and Paracetamol 325mg Tablets",
+    "us": "10's",
+    "mrp": 11,
+    "avl": 1
+  },
+  {
+    "dc": 20,
+    "gn": "Nimesulide Tablets 100 mg",
+    "us": "10's",
+    "mrp": 6,
+    "avl": 0
+  },
+  {
+    "dc": 21,
+    "gn": "Diclofenac Sodium 50mg and Paracetamol 325mg Tablets IP",
+    "us": "10's",
+    "mrp": 9,
+    "avl": 0
+  },
+  {
+    "dc": 22,
+    "gn": "Paracetamol Paediatric Oral Suspension IP 125 mg per 5 ml",
+    "us": "60 ml",
+    "mrp": 11,
+    "avl": 1
+  },
+  {
+    "dc": 23,
+    "gn": "Paracetamol Tablets IP 500 mg",
+    "us": "10's",
+    "mrp": 7,
+    "avl": 0
+  },
+  {
+    "dc": 24,
+    "gn": "Pentazocine Injection IP 30 mg per ml",
+    "us": "1 ml",
+    "mrp": 15,
+    "avl": 1
+  },
+  {
+    "dc": 25,
+    "gn": "Serratiopeptidase Tablets IP 10 mg",
+    "us": "10's",
+    "mrp": 12,
+    "avl": 0
+  },
+  {
+    "dc": 26,
+    "gn": "Tramadol Hydrochloride Injection 100 mg per 2 ml",
+    "us": "2 ml",
+    "mrp": 8,
+    "avl": 1
+  },
+  {
+    "dc": 27,
+    "gn": "Tramadol HCl Injection 50mg 1 ml",
+    "us": "1 ml",
+    "mrp": 5,
+    "avl": 1
+  },
+  { "dc": 28, "gn": "Tramadol Tablets 50mg", "us": "10's", "mrp": 8, "avl": 0 },
+  {
+    "dc": 29,
+    "gn": "Aciclovir Tablets IP 400 mg",
+    "us": "10's",
+    "mrp": 44,
+    "avl": 0
+  },
+  {
+    "dc": 30,
+    "gn": "Amikacin Injection IP 100 mg per 2 ml",
+    "us": "2 ml Vial",
+    "mrp": 12,
+    "avl": 0
+  },
+  {
+    "dc": 31,
+    "gn": "Amikacin Injection IP 250 mg per 2 ml",
+    "us": "2 ml Vial",
+    "mrp": 20,
+    "avl": 0
+  },
+  {
+    "dc": 32,
+    "gn": "Amikacin Injection IP 500 mg per 2 ml",
+    "us": "2 ml Vial",
+    "mrp": 29,
+    "avl": 1
+  },
+  {
+    "dc": 34,
+    "gn": "Metformin Hydrochloride Prolonged-release 500mg and Glimepiride 2mg Tablets IP",
+    "us": "15's",
+    "mrp": 26,
+    "avl": 1
+  },
+  {
+    "dc": 35,
+    "gn": "Amoxycillin 1g and Potassium Clavulanate 200mg Injection IP",
+    "us": "Vial & Wfi",
+    "mrp": 58,
+    "avl": 1
+  },
+  {
+    "dc": 36,
+    "gn": "Amoxycillin 200mg and Potassium Clavulanate 28.5mg Oral Suspension IP per 5ml",
+    "us": "30 ml",
+    "mrp": 27,
+    "avl": 0
+  },
+  {
+    "dc": 37,
+    "gn": "Amoxycillin 250mg and Potassium Clavulanate 50mg Injection IP",
+    "us": "Vial & Wfi",
+    "mrp": 28,
+    "avl": 1
+  },
+  {
+    "dc": 38,
+    "gn": "Amoxycillin 500mg and Potassium Clavulanate 100mg Injection IP",
+    "us": "Vial & Wfi",
+    "mrp": 40,
+    "avl": 0
+  },
+  {
+    "dc": 39,
+    "gn": "Amoxycillin 500mg and Potassium Clavulanate 125mg Tablets IP",
+    "us": "6's",
+    "mrp": 56,
+    "avl": 1
+  },
+  {
+    "dc": 40,
+    "gn": "Amoxycillin 250mg and Cloxacillin 250mg Capsules",
+    "us": "10's",
+    "mrp": 29,
+    "avl": 0
+  },
+  {
+    "dc": 42,
+    "gn": "Amoxycillin Trihydrate Dispersible Tablets IP 125 mg",
+    "us": "10's",
+    "mrp": 12,
+    "avl": 1
+  },
+  {
+    "dc": 43,
+    "gn": "Amoxycillin Oral Suspension IP 125mg per 5ml",
+    "us": "60 ml",
+    "mrp": 19,
+    "avl": 0
+  },
+  {
+    "dc": 44,
+    "gn": "Amoxycillin Capsules IP 250mg",
+    "us": "10's",
+    "mrp": 12,
+    "avl": 0
+  },
+  {
+    "dc": 45,
+    "gn": "Amoxycillin Capsules IP 500mg",
+    "us": "10's",
+    "mrp": 35,
+    "avl": 1
+  },
+  {
+    "dc": 46,
+    "gn": "Ampicillin Injection IP 500 mg",
+    "us": "Vial",
+    "mrp": 7,
+    "avl": 0
+  },
+  {
+    "dc": 47,
+    "gn": "Azithromycin Oral Suspension IP 100mg per 5ml",
+    "us": "15 ml",
+    "mrp": 15,
+    "avl": 0
+  },
+  {
+    "dc": 48,
+    "gn": "Azithromycin Dispersible Tablets 100mg",
+    "us": "10's",
+    "mrp": 27,
+    "avl": 1
+  },
+  {
+    "dc": 49,
+    "gn": "Azithromycin 250 mg film coated Tablet IP",
+    "us": "10's",
+    "mrp": 40,
+    "avl": 0
+  },
+  {
+    "dc": 51,
+    "gn": "Cefadroxil Dispersible Tablets 250mg",
+    "us": "10's",
+    "mrp": 17,
+    "avl": 1
+  },
+  {
+    "dc": 52,
+    "gn": "Cefadroxil Tablets IP 500 mg",
+    "us": "10's",
+    "mrp": 22,
+    "avl": 0
+  },
+  {
+    "dc": 53,
+    "gn": "Cefixime Oral Suspension IP 50mg per 5ml",
+    "us": "30 ml",
+    "mrp": 20,
+    "avl": 1
+  },
+  {
+    "dc": 54,
+    "gn": "Cefixime Tablets IP 100 mg",
+    "us": "10's",
+    "mrp": 28,
+    "avl": 0
+  },
+  {
+    "dc": 55,
+    "gn": "Cefixime Tablets IP 200 mg",
+    "us": "10's",
+    "mrp": 53,
+    "avl": 0
+  },
+  {
+    "dc": 56,
+    "gn": "Cefoperazone 1g and Sulbactam 1g Injection",
+    "us": "Vial & Wfi",
+    "mrp": 88,
+    "avl": 1
+  },
+  {
+    "dc": 57,
+    "gn": "Cefoperazone 500mg and Sulbactam 500mg Injection",
+    "us": "Vial & Wfi",
+    "mrp": 50,
+    "avl": 0
+  },
+  {
+    "dc": 58,
+    "gn": "Cefoperazone Injection IP 1 g",
+    "us": "Vial & Wfi",
+    "mrp": 46,
+    "avl": 0
+  },
+  {
+    "dc": 59,
+    "gn": "Cefotaxime Sodium 1g and Sulbactam Sodium 500mg Injection",
+    "us": "Vial & Wfi",
+    "mrp": 28,
+    "avl": 1
+  },
+  {
+    "dc": 60,
+    "gn": "Cefotaxime Sodium 250mg and Sulbactam Sodium 125mg Injection",
+    "us": "Vial & Wfi",
+    "mrp": 11,
+    "avl": 0
+  },
+  {
+    "dc": 61,
+    "gn": "Cefotaxime Sodium 500mg and Sulbactam Sodium 250mg Injection",
+    "us": "Vial & Wfi",
+    "mrp": 19,
+    "avl": 0
+  },
+  {
+    "dc": 62,
+    "gn": "Cefotaxime Sodium Injection IP 1g",
+    "us": "Vial & Wfi",
+    "mrp": 19,
+    "avl": 1
+  },
+  {
+    "dc": 63,
+    "gn": "Cefotaxime Sodium Injection IP 250 mg",
+    "us": "Vial & Wfi",
+    "mrp": 10,
+    "avl": 1
+  },
+  {
+    "dc": 64,
+    "gn": "Cefotaxime Sodium Injection IP 500 mg",
+    "us": "Vial & Wfi",
+    "mrp": 12,
+    "avl": 0
+  },
+  {
+    "dc": 65,
+    "gn": "Cefpodoxime Proxetil Dispersible Tablets 100 mg",
+    "us": "10's",
+    "mrp": 40,
+    "avl": 1
+  },
+  {
+    "dc": 66,
+    "gn": "Cefpodoxime Tablets IP 200 mg",
+    "us": "10's",
+    "mrp": 70,
+    "avl": 1
+  },
+  {
+    "dc": 67,
+    "gn": "Ceftazidime Injection IP 1g",
+    "us": "Vial & Wfi",
+    "mrp": 80,
+    "avl": 1
+  },
+  {
+    "dc": 68,
+    "gn": "Ceftazidime Injection IP 250mg",
+    "us": "Vial & Wfi",
+    "mrp": 30,
+    "avl": 0
+  },
+  {
+    "dc": 69,
+    "gn": "Ceftazidime Injection IP 500mg",
+    "us": "Vial & Wfi",
+    "mrp": 50,
+    "avl": 0
+  },
+  {
+    "dc": 70,
+    "gn": "Ceftriaxone 1g and Sulbactam 500mg Injection",
+    "us": "Vial & Wfi",
+    "mrp": 48,
+    "avl": 0
+  },
+  {
+    "dc": 71,
+    "gn": "Ceftriaxone 1g and Tazobactam 125mg Injection",
+    "us": "Vial & Wfi",
+    "mrp": 48,
+    "avl": 1
+  },
+  {
+    "dc": 72,
+    "gn": "Azithromycin Tablets IP 500 mg",
+    "us": "3's",
+    "mrp": 42,
+    "avl": 0
+  },
+  {
+    "dc": 73,
+    "gn": "Ceftriaxone 250 mg + Sulbactum 125 mg Injection with WFI",
+    "us": "Vial & Wfi",
+    "mrp": 17,
+    "avl": 1
+  },
+  {
+    "dc": 74,
+    "gn": "Ceftriaxone 500mg and Sulbactam 250mg Injection",
+    "us": "Vial & Wfi",
+    "mrp": 35,
+    "avl": 0
+  },
+  {
+    "dc": 75,
+    "gn": "Ceftriaxone Injection IP 1 g",
+    "us": "Vial & Wfi",
+    "mrp": 28,
+    "avl": 0
+  },
+  {
+    "dc": 76,
+    "gn": "Ceftriaxone Injection IP 250 mg",
+    "us": "Vial & Wfi",
+    "mrp": 13,
+    "avl": 1
+  },
+  {
+    "dc": 77,
+    "gn": "Ceftriaxone injection IP 500 mg",
+    "us": "Vial & Wfi",
+    "mrp": 24,
+    "avl": 0
+  },
+  {
+    "dc": 78,
+    "gn": "Cefuroxime Axetil Tablets IP 250 mg",
+    "us": "10's",
+    "mrp": 75,
+    "avl": 1
+  },
+  {
+    "dc": 79,
+    "gn": "Cefuroxime Axetil Tablets IP 500 mg",
+    "us": "10's",
+    "mrp": 142,
+    "avl": 0
+  },
+  {
+    "dc": 80,
+    "gn": "Cephalexin Dispersible Tablets 125mg",
+    "us": "10's",
+    "mrp": 21,
+    "avl": 1
+  },
+  {
+    "dc": 81,
+    "gn": "Cephalexin Capsules IP 250mg",
+    "us": "10's",
+    "mrp": 33,
+    "avl": 0
+  },
+  {
+    "dc": 82,
+    "gn": "Cephalexin Capsules IP 500mg",
+    "us": "10's",
+    "mrp": 50,
+    "avl": 0
+  },
+  {
+    "dc": 83,
+    "gn": "Ciprofloxacin 250mg and Tinidazole 300mg Tablets",
+    "us": "10's",
+    "mrp": 28,
+    "avl": 1
+  },
+  {
+    "dc": 84,
+    "gn": "Ciprofloxacin 500mg and Tinidazole 600mg Tablets",
+    "us": "10's",
+    "mrp": 39,
+    "avl": 0
+  },
+  {
+    "dc": 85,
+    "gn": "Ciprofloxacin Hydrochloride Tablets IP 250 mg",
+    "us": "10's",
+    "mrp": 11,
+    "avl": 1
+  },
+  {
+    "dc": 86,
+    "gn": "Ciprofloxacin Hydrochloride Tablets IP 500 mg",
+    "us": "10's",
+    "mrp": 20,
+    "avl": 0
+  },
+  {
+    "dc": 87,
+    "gn": "Clotrimazole Cream IP 1% w/w",
+    "us": "15 g tubes",
+    "mrp": 15,
+    "avl": 1
+  },
+  {
+    "dc": 88,
+    "gn": "Co-trimoxazole (Sulphamethoxazole 200mg and Trimethoprim 40mg per 5ml) Oral Suspension IP",
+    "us": "50 ml",
+    "mrp": 15,
+    "avl": 0
+  },
+  {
+    "dc": 89,
+    "gn": "Co-trimoxazole (Sulphamethoxazole 800mg and Trimethoprim 160mg) Tablets IP",
+    "us": "10's",
+    "mrp": 11,
+    "avl": 0
+  },
+  {
+    "dc": 90,
+    "gn": "Co-trimoxazole (Sulphamethoxazole 100mg and Trimethoprim 20mg) Tablets IP",
+    "us": "10's",
+    "mrp": 2,
+    "avl": 0
+  },
+  {
+    "dc": 92,
+    "gn": "Doxycycline Capsules IP 100mg",
+    "us": "10's",
+    "mrp": 14,
+    "avl": 1
+  },
+  {
+    "dc": 93,
+    "gn": "Erythromycin Stearate Tablets IP 250mg",
+    "us": "10's",
+    "mrp": 19,
+    "avl": 0
+  },
+  {
+    "dc": 94,
+    "gn": "Gentamicin Sulphate Injection IP 80 mg per 2ml",
+    "us": "2 ml",
+    "mrp": 5,
+    "avl": 0
+  },
+  {
+    "dc": 95,
+    "gn": "Levofloxacin Tablets IP 250mg",
+    "us": "10's",
+    "mrp": 18,
+    "avl": 1
+  },
+  {
+    "dc": 96,
+    "gn": "Levofloxacin Tablets IP 500mg",
+    "us": "10's",
+    "mrp": 33,
+    "avl": 1
+  },
+  {
+    "dc": 97,
+    "gn": "Meropenem Injection IP 1 g",
+    "us": "Vial & Wfi",
+    "mrp": 236,
+    "avl": 0
+  },
+  {
+    "dc": 98,
+    "gn": "Norfloxacin 400mg and Tinidazole 600mg Tablets",
+    "us": "10's",
+    "mrp": 40,
+    "avl": 0
+  },
+  {
+    "dc": 99,
+    "gn": "Norfloxacin Tablets IP 400 mg",
+    "us": "10's",
+    "mrp": 21,
+    "avl": 1
+  },
+  {
+    "dc": 100,
+    "gn": "Ofloxacin 200mg and Ornidazole 500mg Tablets IP",
+    "us": "10's",
+    "mrp": 27,
+    "avl": 1
+  },
+  {
+    "dc": 101,
+    "gn": "Ofloxacin Tablets IP 200mg",
+    "us": "10's",
+    "mrp": 14,
+    "avl": 0
+  },
+  {
+    "dc": 102,
+    "gn": "Ofloxacin Tablets IP 400mg",
+    "us": "10's",
+    "mrp": 35,
+    "avl": 0
+  },
+  {
+    "dc": 103,
+    "gn": "Piperacillin 4000mg and Tazobactum 500mg Injection IP",
+    "us": "Vial & Wfi",
+    "mrp": 122,
+    "avl": 1
+  },
+  {
+    "dc": 104,
+    "gn": "Roxithromycin Oral Suspension 50 mg per 5ml",
+    "us": "30 ml",
+    "mrp": 16,
+    "avl": 0
+  },
+  {
+    "dc": 105,
+    "gn": "Roxithromycin Tablets IP 150 mg",
+    "us": "10's",
+    "mrp": 28,
+    "avl": 0
+  },
+  {
+    "dc": 106,
+    "gn": "Roxithromycin Tablets IP 300 mg",
+    "us": "10's",
+    "mrp": 50,
+    "avl": 1
+  },
+  {
+    "dc": 107,
+    "gn": "Tinidazole Tablets IP 300 mg",
+    "us": "10's",
+    "mrp": 13,
+    "avl": 1
+  },
+  {
+    "dc": 108,
+    "gn": "Tinidazole Tablets IP 500 mg",
+    "us": "10's",
+    "mrp": 16,
+    "avl": 1
+  },
+  {
+    "dc": 109,
+    "gn": "Vancomycin Hydrochloride for Intravenous Infusion IP 500 mg",
+    "us": "Vial & Wfi",
+    "mrp": 135,
+    "avl": 1
+  },
+  {
+    "dc": 110,
+    "gn": "Adapalene 0.1%w/w Gel",
+    "us": "15 gm tubes",
+    "mrp": 29,
+    "avl": 0
+  },
+  {
+    "dc": 112,
+    "gn": "Beclomethasone Dipropionate 0.025%w/w, Clotrimazole 1%w/w and Gentamicin Sulphate 0.1%w/w Cream",
+    "us": "15 g tubes",
+    "mrp": 20,
+    "avl": 0
+  },
+  {
+    "dc": 113,
+    "gn": "Beclomethasone 0.025%w/w and Neomycin 0.5%w/w Cream",
+    "us": "15g tube",
+    "mrp": 11,
+    "avl": 1
+  },
+  {
+    "dc": 115,
+    "gn": "Calamine Lotion IP",
+    "us": "100 ml",
+    "mrp": 28,
+    "avl": 0
+  },
+  {
+    "dc": 117,
+    "gn": "Chlorhexidine Mouthwash IP 0.2 % w/v",
+    "us": "100 ml",
+    "mrp": 23,
+    "avl": 0
+  },
+  {
+    "dc": 118,
+    "gn": "Clobetasol Propionate Cream IP 0.05 % w/w",
+    "us": "15 gm Tube",
+    "mrp": 15,
+    "avl": 1
+  },
+  {
+    "dc": 120,
+    "gn": "Fusidic Acid Cream IP 2% w/w",
+    "us": "5 gm Tube",
+    "mrp": 25,
+    "avl": 0
+  },
+  {
+    "dc": 122,
+    "gn": "Ketoconazole Lotion 2% w/v",
+    "us": "100 ml Bottle",
+    "mrp": 55,
+    "avl": 0
+  },
+  {
+    "dc": 124,
+    "gn": "Povidone Iodine Ointment 5% w/w",
+    "us": "250 gm tubes/Jar",
+    "mrp": 115,
+    "avl": 1
+  }
+]

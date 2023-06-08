@@ -1,0 +1,168 @@
+/*Bootstrap Custom test*/
+
+.btn {
+  --bs-btn-font-weight: 600;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, .171);
+}
+
+.btn:hover {
+  box-shadow: 0px 4px 10px 0px rgba(50, 50, 93, .226), 0px 1px 3px 0px rgba(0, 0, 0, .08);
+}
+
+.btn:focus {
+  box-shadow: var(--bs-btn-focus-box-shadow);
+}
+
+.btn:focus-visible {
+  box-shadow: var(--bs-btn-focus-box-shadow);
+  border-color: var(--bs-btn-hover-border-color);
+}
+
+.btn-primary {
+  --bs-btn-bg: #5757E7;
+  ;
+  --bs-btn-border-color: #5757E7;
+  ;
+}
+
+.btn-primary:focus,
+.btn-primary:focus-visible {
+  background-color: #5757E7;
+  box-shadow: 0 0 0 0.25rem rgba(94, 114, 228, 0.5);
+}
+
+.card,
+.btn,
+.form-control,
+.modal-content {
+  border-radius: var(--bs-border-radius-sm) !important;
+}
+
+.btn-close:active {
+  box-shadow: var(--bs-btn-close-focus-shadow);
+  opacity: var(--bs-btn-close-focus-opacity);
+}
+
+#btnClose:active {
+  box-shadow: var(--bs-btn-focus-box-shadow);
+}
+
+
+/*----------------*/
+.c-btn:hover {
+  background-color: #5757e70d;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, .171);
+}
+
+.c-btn:active {
+  background-color: #5757e70d !important;
+  box-shadow: none;
+}
+
+input#medlistSearchBox::placeholder {
+  color: lightslategray;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*@media only screen and (min-width: 768px) {
+  .navbar-nav {
+    background: transparent;
+  }
+}*/
+
+.navbar {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.navbar .navbar-brand {
+  font-family: -webkit-pictograph;
+}
+
+@media only screen and (min-width: 240px) {
+  .features {
+    padding: 80px 0;
+  }
+}
+
+@media only screen and (min-width: 240px) {
+  .btn-cta {
+    font-family: -webkit-pictograph;
+  }
+}
+
+.blockfilter-btn {
+  text-decoration: none;
+  position: relative;
+}
+
+.blockfilter-btn.active {
+  color: #dc3545;
+}
+
+.blockfilter-btn.active:before,
+.blockfilter-btn:hover:before {
+  content: "";
+  position: absolute;
+  left: -5%;
+  border: 1px solid;
+  border-radius: 5px;
+  height: 26px;
+  width: 110%;
+}
+
+.blockfilter-btn.active:hover:before {
+  border-color: #0d6efd;
+}
+
+/* .vacfinder-avail-card {
+    background-image: linear-gradient(180deg, #ffffff00, #fff),
+    linear-gradient(70deg, #ddf4ff 32%, #dafbe1);
+} */
+
+/*.vacfinder-navail-card {
+  background-image: linear-gradient(180deg, #ffffff00, #fff),
+    linear-gradient(70deg, #ffebe9 32%, #ffebe9);
+  border-color: #ff818266;
+}*/
+
+@media only screen and (max-width: 530px) {
+
+  select#state-dropdown,
+  select#district-dropdown {
+    max-width: 145px;
+  }
+}
+
+.vacfilter-btn.active {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+
+/* druglist specific */
+/*Search Mechanism div visibility helper*/
+
+
+
+
+
+
+
+
+/*Bootstrap mods-------------------------------------------------------------------------------------*/
