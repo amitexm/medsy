@@ -1,161 +1,123 @@
-/*Bootstrap Custom test*/
+:root {
+    --bs-body-font-size: 0.9375rem;
+}
+
 .btn {
-  --bs-btn-font-weight: 600;
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, .171);
+    --bs-btn-font-weight: 600;
+    border-radius: var(--bs-border-radius) !important;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, .171);
+}
+
+/* temp*/
+.btn:focus {
+    color: var(--bs-btn-hover-color);
+    background-color: var(--bs-btn-hover-bg);
+    border-color: var(--bs-btn-hover-border-color);
+    outline: 0;
+    box-shadow: var(--bs-btn-focus-box-shadow);
 }
 
 .btn:hover {
-  box-shadow: 0px 4px 10px 0px rgba(50, 50, 93, .226), 0px 1px 3px 0px rgba(0, 0, 0, .08);
-}
-
-.btn:focus {
-  box-shadow: var(--bs-btn-focus-box-shadow);
-}
-
-.btn:focus-visible {
-  box-shadow: var(--bs-btn-focus-box-shadow);
-  border-color: var(--bs-btn-hover-border-color);
-}
-
-.btn-primary {
-  --bs-btn-bg: #5757E7;
-  ;
-  --bs-btn-border-color: #5757E7;
-  ;
-}
-
-.btn-primary:focus,
-.btn-primary:focus-visible {
-  background-color: #5757E7;
-  box-shadow: 0 0 0 0.25rem rgba(94, 114, 228, 0.5);
+    box-shadow: 0px 4px 10px 0px rgba(50, 50, 93, .226), 0px 1px 3px 0px rgba(0, 0, 0, .08);
 }
 
 .card,
-.btn,
 .form-control,
 .modal-content {
-  border-radius: var(--bs-border-radius-sm) !important;
-}
-
-.btn-close:active {
-  box-shadow: var(--bs-btn-close-focus-shadow);
-  opacity: var(--bs-btn-close-focus-opacity);
-}
-
-#btnClose:active {
-  box-shadow: var(--bs-btn-focus-box-shadow);
-}
-
-
-/*----------------*/
-.c-btn:hover {
-  background-color: #5757e70d;
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, .171);
-}
-
-.c-btn:active {
-  background-color: #5757e70d !important;
-  box-shadow: none;
-}
-
-input#medlistSearchBox::placeholder {
-  color: lightslategray;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*@media only screen and (min-width: 768px) {
-  .navbar-nav {
-    background: transparent;
-  }
-}*/
-
-.navbar {
-  padding-top: 15px;
-  padding-bottom: 15px;
+    border-radius: var(--bs-border-radius) !important;
 }
 
 .navbar .navbar-brand {
-  font-family: -webkit-pictograph;
-}
-
-@media only screen and (min-width: 240px) {
-  .features {
-    padding: 80px 0;
-  }
-}
-
-@media only screen and (min-width: 240px) {
-  .btn-cta {
     font-family: -webkit-pictograph;
-  }
+    font-weight: 600;
+    color: #6d48e5 !important;
 }
 
-.blockfilter-btn {
-  text-decoration: none;
-  position: relative;
+.navbar .navbar-toggler {
+    background: #6d48e5;
+    border: 1px solid transparent !important;
 }
 
-.blockfilter-btn.active {
-  color: #dc3545;
+.navbar .navbar-toggler:focus {
+    box-shadow: none;
 }
 
-.blockfilter-btn.active:before,
-.blockfilter-btn:hover:before {
-  content: "";
-  position: absolute;
-  left: -5%;
-  border: 1px solid;
-  border-radius: 5px;
-  height: 26px;
-  width: 110%;
-}
-
-.blockfilter-btn.active:hover:before {
-  border-color: #0d6efd;
-}
-
-/* .vacfinder-avail-card {
-    background-image: linear-gradient(180deg, #ffffff00, #fff),
-    linear-gradient(70deg, #ddf4ff 32%, #dafbe1);
-} */
-
-/*.vacfinder-navail-card {
-  background-image: linear-gradient(180deg, #ffffff00, #fff),
-    linear-gradient(70deg, #ffebe9 32%, #ffebe9);
-  border-color: #ff818266;
-}*/
-
-@media only screen and (max-width: 530px) {
-
-  select#state-dropdown,
-  select#district-dropdown {
-    max-width: 145px;
-  }
-}
-
-.vacfilter-btn.active {
-  background-color: #6c757d;
-  color: #fff;
+.navbar .navbar-toggler:hover {
+    box-shadow: 0px 4px 10px 0px rgba(50, 50, 93, .226), 0px 1px 3px 0px rgba(0, 0, 0, .08);
 }
 
 
-/* druglist specific */
-/*Search Mechanism div visibility helper*/
+
+a#loginBtn:hover,
+a#loginBtn:focus {
+    background-color: #5757e70d;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, .171);
+}
+
+a#loginBtn:active {
+    background-color: #5757e70d;
+    box-shadow: none;
+}
+
+
+li.list-group-item {
+    display: flex;
+    padding-left: 0.5rem;
+
+}
+
+li.list-group-item-danger {
+    /* background-color: #feeec8; */
+    color: var(--bs-danger);
+}
+
+li.list-group-item-success {
+    /* background-color: #d4f8c4; */
+    color: var(--bs-success);
+}
+
+
+input#passInput:valid,
+input#passInput:invalid {
+    background-position: 83%;
+}
+
+
+span#medlistSearchBoxClear:hover,
+span#medlistSearchBoxClear:active {
+    background-color: lavender;
+    border-radius: 2px;
+}
+
+input#medlistSearchBox::placeholder {
+    color: lightslategray;
+}
+
+input#medlistSearchBox:focus {
+    border-color: var(--bs-primary) !important;
+}
+
+div#medlistSearch:hover svg {
+    color: var(--bs-primary) !important;
+}
+
+
+input[type="checkbox"] {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+input[type="checkbox"]:active::after {
+    content: "";
+    display: block;
+    width: 17px;
+    height: 16px;
+    /* border-radius: 3px; */
+    translate: -1px 2px;
+    outline: solid 10px;
+    outline-color: #0074ff4d;
+    outline-offset: -1px;
+}
 
 
 
@@ -164,4 +126,128 @@ input#medlistSearchBox::placeholder {
 
 
 
-/*Bootstrap mods-------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+    padding: 3px 10px;
+    display: inline-block;
+    cursor: pointer;
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible;
+}
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+    background-color: rgba(255, 255, 255, 0.7490196078);
+}
+
+.hamburger-box {
+    width: 16px;
+    height: 12px;
+    display: inline-block;
+    position: relative;
+}
+
+.hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: -1px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+    width: 16px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.7490196078);
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+    content: "";
+    display: block;
+}
+
+.hamburger-inner::before {
+    top: -5px;
+}
+
+.hamburger-inner::after {
+    bottom: -5px;
+}
+
+/*
+ * Slider Reverse
+ */
+.hamburger--slider-r .hamburger-inner {
+    top: 1px;
+}
+
+.hamburger--slider-r .hamburger-inner::before {
+    top: 5px;
+    transition-property: transform, opacity;
+    transition-timing-function: ease;
+    transition-duration: 0.15s;
+}
+
+.hamburger--slider-r .hamburger-inner::after {
+    top: 10px;
+}
+
+.hamburger--slider-r.is-active .hamburger-inner {
+    transform: translate3d(0, 5px, 0) rotate(-45deg);
+}
+
+.hamburger--slider-r.is-active .hamburger-inner::before {
+    transform: rotate(45deg) translate3d(2.2857142857px, -3px, 0);
+    opacity: 0;
+}
+
+.hamburger--slider-r.is-active .hamburger-inner::after {
+    transform: translate3d(0, -10px, 0) rotate(90deg);
+}
+
+
+
+
+
+.loaderBody-overlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.50);
+    cursor: pointer;
+}
