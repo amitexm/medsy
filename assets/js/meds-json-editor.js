@@ -1,16 +1,16 @@
 
 async function fetchData() {
-  
-  const url = '/assets/json/meds.json';
-    
+
+  const url = '/assets/json/new-meds-data-min.json';
+
   const response = await fetch(url);
-      
-  if(response.status === 200) {
+
+  if (response.status === 200) {
 
     console.log(response.status);
 
-    return response.json();  
-    
+    return response.json();
+
   }
   else {
     return 0;
@@ -20,25 +20,25 @@ async function fetchData() {
 
 fetchData().then(data => {
   console.log(data);
-  
-  
-let outputData = data.map(item=>{
-return {
-        "dc": parseInt(item.dc),
-        "gn": item.gn,
-        "us": item.us,
-        "mrp": parseInt(item.mrp),
-        "avl": Math.round(Math.random())
-       }
-});
 
-console.log(outputData);
 
-var jsonStr = JSON.stringify(outputData);
+  let outputData = data.map(item => {
+    return {
+      "dc": parseInt(item.dc),
+      "gn": item.gn,
+      "us": item.us,
+      "mrp": parseInt(item.mrp),
+      "avl": Math.round(Math.random())
+    }
+  });
 
-document.body.innerHTML = jsonStr;
+  console.log(outputData);
 
-  
+  var jsonStr = JSON.stringify(outputData);
+
+  document.body.innerHTML = jsonStr;
+
+
 });
 
 

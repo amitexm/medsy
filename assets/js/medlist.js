@@ -185,19 +185,6 @@ fetchData().then((data) => {
     medlistSearchBox.dispatchEvent(new Event("input", { bubbles: true }));
   });
 
-
-  // let scrollPos = sessionStorage.getItem("scrollPos");
-  // console.log(scrollPos);
-
-  // setTimeout(() => {
-  //   if (scrollPos !== null) {
-  //     document.documentElement.scrollTop = parseInt(scrollPos, 10);
-  //     console.log("scrolled");
-  //   }
-  // });
-
-
-
   // jsonMedsData = jsonMeds.map(item => {
   //   return {
   //           "dc": parseInt(item.dc),
