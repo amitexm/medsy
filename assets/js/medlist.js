@@ -65,11 +65,11 @@ function listMeds(data, toAppend) {
   const divideInto = 6;
   const chunkSize = Math.trunc(arrLength / divideInto);
 
-  const rem = arrLength % 6;
+  const rem = arrLength % divideInto;
 
   let iteration = 0;
 
-  const iterations = rem ? divideInto : divideInto + 1;
+  const iterations = !rem ? divideInto : divideInto + 1;
 
   toAppend.innerHTML = "";
 
@@ -82,8 +82,8 @@ function listMeds(data, toAppend) {
       text = text +
         `<li class="list-group-item d-flex ps-3 pb-3 ${data[i].avl ? "list-group-item-success" : "list-group-item-danger"}">
           <div class="w-100">
-          <div>${data[i].gn}</div>
-            <div class="d-flex justify-content-between text-muted pe-2 mt-1">
+            <div>${data[i].gn}</div>
+            <div class="d-flex justify-content-between text-muted pe-2 mt-1 text-center">
               <small>(${data[i].dc})</small>
               <small>${data[i].us}</small>
               <small>${data[i].mrp ? "Rs. " + data[i].mrp : "Under Processing"}</small>
