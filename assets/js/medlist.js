@@ -58,18 +58,23 @@ async function fetchData() {
   return jsonMeds;
 }
 
+let li, liCount, divideInto, chunkSize, rem, iterations;
+
 function listMeds(data, toAppend) {
+
   // standalone function for displaying list from 'data' js object.
 
   const arrLength = data.length;
-  const divideInto = 6;
-  const chunkSize = Math.trunc(arrLength / divideInto);
 
-  const rem = arrLength % divideInto;
+  divideInto = 6;
+
+  chunkSize = Math.trunc(arrLength / divideInto);
+
+  rem = arrLength % divideInto;
+
+  iterations = !rem ? divideInto : divideInto + 1;
 
   let iteration = 0;
-
-  const iterations = !rem ? divideInto : divideInto + 1;
 
   toAppend.innerHTML = "";
 
@@ -108,29 +113,34 @@ function listMeds(data, toAppend) {
       if (medlistSearchBox.value.trim() !== "") {
         medlistSearchBox.dispatchEvent(new Event("input", { bubbles: true }));
       }
+
+      // One time initialization for filtermeds() to prevent reinitialization on every search box value entered
+      li = medlistList.getElementsByTagName("li");
+      liCount = li.length; divideInto = 6;
+      chunkSize = Math.trunc(liCount / divideInto); rem = liCount % divideInto;
+      iterations = !rem ? divideInto : divideInto + 1;
     }
   }, 0);
+
 }
 
 function filterMeds(value) {
+
   let filter = value.toLowerCase().trim();
 
-  let li = medlistList.getElementsByTagName("li");
-
-  const rowCount = li.length;
-  const divideInto = 6;
-  const chunkSize = rowCount / divideInto;
   let iteration = 0;
 
-  setTimeout(function generateRows() {
-    const base = chunkSize * iteration;
-    const loopSize = base + chunkSize;
+  setTimeout(function showHideRows() {
 
-    // Loop through all list items, and hide those who don't match the search query
+    const base = chunkSize * iteration;
+    const loopSize = iteration === divideInto ? base + rem : base + chunkSize;
+
+    // Loop through all list items, and hide those not matching the search query
 
     let liElm, i, txtValue;
 
     for (i = base; i < loopSize; i++) {
+
       liElm = li[i].children[0].children[0];
 
       txtValue = liElm.textContent || liElm.innerText;
@@ -144,7 +154,7 @@ function filterMeds(value) {
 
     iteration++;
 
-    if (iteration < divideInto) setTimeout(generateRows, 0);
+    if (iteration < iterations) setTimeout(showHideRows, 0);
   }, 0);
 }
 
@@ -155,6 +165,8 @@ function filterMeds(value) {
     medlistSearchBoxClear.style.display = "block";
   }
 })();
+
+
 
 fetchData().then((data) => {
 
