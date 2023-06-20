@@ -92,6 +92,7 @@ function listMeds(data, toAppend) {
               <small>(${data[i].dc})</small>
               <small>${data[i].us}</small>
               <small>${data[i].mrp ? "Rs. " + data[i].mrp : "Under Processing"}</small>
+              <label class="fav"><input type="checkbox"></label>
               ${loggedIn ? `<input type="checkbox" data-dc="${data[i].dc}" ${data[i].avl ? "checked" : ""}>` : ""}
             </div>
           </div>
