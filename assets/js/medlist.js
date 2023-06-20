@@ -10,7 +10,7 @@ const medlistList = document.getElementById("medlistList");
 const medlistSearchBox = document.getElementById("medlistSearchBox");
 const medlistSearchBoxClear = document.getElementById("medlistSearchBoxClear");
 
-let jsonMeds = [], jsonMedsAvl = [];
+let jsonMeds = [], jsonMedsAvl = [], jsonMedsFav = [];
 
 async function fetchData() {
 
@@ -18,7 +18,7 @@ async function fetchData() {
 
     octokit = new Octokit({ auth: localStorage.getItem("gt") });
 
-    const [medsDataResponse, { data: { content } }] = await Promise.all([
+    const [medsDataResponse, { data: { content } }, medsFavResponse] = await Promise.all([
 
       fetch("/assets/json/meds-data-min.json"),
 
@@ -29,12 +29,25 @@ async function fetchData() {
         headers: {
           'X-GitHub-Api-Version': '2022-11-28'
         }
+      }),
+
+      octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
+        owner: 'amitexm',
+        repo: 'medsy',
+        path: 'assets/json/meds-fav-min.json',
+        headers: {
+          'X-GitHub-Api-Version': '2022-11-28'
+        }
       })
     ]);
 
     var jsonMedsData = await medsDataResponse.json();
 
     jsonMedsAvl = JSON.parse(CryptoJS.enc.Base64.parse(content.replace(/\n/g, "")).toString(CryptoJS.enc.Utf8));
+
+    // jsonMedsFav = 
+
+    console.log(medsFavResponse);
 
   } else {
 
