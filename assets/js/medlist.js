@@ -45,29 +45,31 @@ async function fetchData() {
 
     jsonMedsAvl = JSON.parse(CryptoJS.enc.Base64.parse(content.replace(/\n/g, "")).toString(CryptoJS.enc.Utf8));
 
-    // jsonMedsFav = 
-
-    console.log(medsFavResponse);
+    jsonMedsFav = JSON.parse(CryptoJS.enc.Base64.parse(medsFavResponse.data.content.replace(/\n/g, "")).toString(CryptoJS.enc.Utf8));
 
   } else {
 
-    const [medsDataResponse, medsAvlResponse] = await Promise.all([
+    const [medsDataResponse, medsAvlResponse, medsFavResponse] = await Promise.all([
       fetch("/assets/json/meds-data-min.json"),
-      fetch("/assets/json/meds-avl-min.json?qs=" + Date.now())
+      fetch("/assets/json/meds-avl-min.json?qs=" + Date.now()),
+      fetch("/assets/json/meds-fav-min.json?qs=" + Date.now())
     ]);
 
     var jsonMedsData = await medsDataResponse.json();
 
     jsonMedsAvl = await medsAvlResponse.json();
+
+    jsonMedsFav = await medsFavResponse.json();
   }
 
   for (let i = 0; i < jsonMedsData.length; i++) {
     jsonMeds.push({
       ...jsonMedsData[i],
       ...jsonMedsAvl.find((item) => item.dc === jsonMedsData[i].dc),
+      ...jsonMedsFav.find((item) => item.dc === jsonMedsData[i].dc)
     });
   }
-  // console.log(jsonMeds);
+  console.log(jsonMeds);
   return jsonMeds;
 }
 
