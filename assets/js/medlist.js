@@ -443,6 +443,8 @@ else {
 
   const medlistUpdateQueueDialog = document.getElementById("medlistUpdateQueueDialog");
 
+  const counterFavNavBtn = document.getElementById("counterFavNavBtn");
+
   let updationQueue = [], favQueue = [];
 
   medlistList.addEventListener("click", editUpdationQueue);
@@ -522,7 +524,7 @@ else {
           favQueue.push(favMed);
         }
 
-
+        counterFavNavBtn.style.display = favQueue.length ? "block" : "none";
 
       }
     }
