@@ -28,8 +28,8 @@
           </svg>
           Medsy.
         </a>
-        <button class="btn btn-outline-light position-relative" id="favNavBtn" data-bs-toggle="modal"
-          data-bs-target="#dialogFavList">
+        <button id="favNavBtn" class="btn btn-outline-light position-relative" data-bs-toggle="modal"
+          data-bs-target="#favListDialog">
           <span id="counterFavNavBtn" style="display: none;"
             class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
             <span class="visually-hidden">New favorites</span>
@@ -222,8 +222,8 @@
   </div>
 
   <!-- Modal - Favoutites List Dialog, Toggled by "Favorite" Navbar Button-->
-  <div class="modal fade bg-body" id="dialogFavList" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="dialogFavListLabel" aria-hidden="true">
+  <div class="modal fade bg-body" id="favListDialog" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="favListDialogLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-sm-down">
       <div class="modal-content h-100">
         <div class="modal-header text-center">
@@ -234,7 +234,7 @@
           <button type="button" class="btn-close me-2 px-3" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body pt-0">
-          <div id="dialogFavListContainer" class="list-group list-group-flush d-grid gap-2 lh-base mt-3"></div>
+          <div id="favListDialogList" class="list-group list-group-flush d-grid gap-2 lh-base mt-3"></div>
         </div>
         <div class="modal-footer justify-content-evenly">
           <button id="btnFavSync" type="button" class="btn btn-primary px-3">

@@ -149,7 +149,7 @@ button#favNavBtn {
     background-position: center;
 }
 
-div#dialogFavList {
+div#favListDialog {
     top: 54px;
     bottom: 0;
     height: auto;
@@ -157,6 +157,7 @@ div#dialogFavList {
 
 .modal-backdrop.show {
     opacity: 0;
+    margin-top: 54px;
 }
 
 

@@ -437,13 +437,13 @@ else {
 
   const btnUpdationQueue = document.getElementById("btnUpdationQueue");
   const counterBtnUpdationQueue = document.getElementById("counterBtnUpdationQueue");
-
+  const medlistUpdateQueueDialog = document.getElementById("medlistUpdateQueueDialog");
   const btnUpdate = document.getElementById("btnUpdate");
   const counterBtnUpdate = document.getElementById("counterBtnUpdate");
 
-  const medlistUpdateQueueDialog = document.getElementById("medlistUpdateQueueDialog");
-
+  const favNavBtn = document.getElementById("favNavBtn");
   const counterFavNavBtn = document.getElementById("counterFavNavBtn");
+  const favListDialogList = document.getElementById("favListDialogList");
 
   let updationQueue = [], favQueue = [];
 
@@ -534,10 +534,7 @@ else {
     e.stopPropagation(); //warning
   }
 
-  /** Event listener for when first Update button in medlist screen is clicked.
-   * It resets the Updation Queue Dialog by setting its innerHTML to empty string.
-   * Then regenerates the list in Updation Queue Dialog from the updationQueue[] array reusing the listMeds function.
-  **/
+
   btnUpdationQueue.addEventListener("click", function () {
 
     let text = "";
@@ -564,9 +561,6 @@ else {
     }
   });
 
-  /** Event Listener for when med checkbox in Update Queue Dialog is clicked upon.
-   * It catches the event and does the following operations.
-   */
   medlistUpdateQueueDialog.addEventListener("click", function (e) {
     if ("checkbox" === e.target.type) {
       // reusing the function to remove the clicked meds object from updationQueue[] array.
@@ -590,6 +584,35 @@ else {
 
     // stope event propagation going any further then where event listener is added (medlistUpdateQueueDialog).
     e.stopPropagation(); //warning
+  });
+
+  favNavBtn.addEventListener("click", function () {
+
+    let text = "";
+
+    for (let i = 0; i < jsonMeds.length; i++) {
+
+      if (jsonMeds[i].fav) {
+        text = text +
+          `<li class="list-group-item d-flex ps-3 pb-3 ${jsonMeds[i].avl ? "list-group-item-success" : "list-group-item-danger"}">
+            <div>${i + 1}. </div>
+            <div class="w-100">
+              <div class="h6">${jsonMeds[i].gn}</div>
+              <div class="d-flex justify-content-between text-muted pe-2 mt-1">
+                <small>(${jsonMeds[i].dc})</small>
+                <small>${jsonMeds[i].us}</small>
+                <small>${jsonMeds[i].mrp ? "Rs. " + jsonMeds[i].mrp : "Under Processing"}</small>
+                <label class="fav"><input type="checkbox" name="fav" data-dc="${jsonMeds[i].dc}" ${jsonMeds[i].fav ? "checked" : ""}></label>
+                <input type="checkbox" name="avl" data-dc="${jsonMeds[i].dc}" ${jsonMeds[i].avl ? "checked" : ""}>
+              </div>
+            </div>
+          </li>`;
+      }
+    }
+
+    if (text) {
+      favListDialogList.innerHTML = text;
+    }
   });
 
 
