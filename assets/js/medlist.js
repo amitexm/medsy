@@ -101,8 +101,7 @@ function listMeds(data, toAppend) {
 
     for (let i = base; i < loopSize; i++) {
       text = text +
-        `<li data-dc="${data[i].dc}" class="list-group-item d-flex ps-3 pb-3 ${data[i].avl ? "list-group-item-success" : "list-group-item-danger"}">
-          <div class="w-100">
+        `<li data-dc="${data[i].dc}" class="list-group-item ${data[i].avl ? "list-group-item-success" : "list-group-item-danger"}">
             <div>${data[i].gn}</div>
             <div class="detail text-muted">
               <small>(${data[i].dc})</small>
@@ -111,7 +110,6 @@ function listMeds(data, toAppend) {
               <label class="fav"><input type="checkbox" name="fav" data-dc="${data[i].dc}" ${data[i].fav ? "checked" : ""}></label>
               ${loggedIn ? `<input type="checkbox" name="avl" data-dc="${data[i].dc}" ${data[i].avl ? "checked" : ""}>` : ""}
             </div>
-          </div>
         </li>`;
     }
 
@@ -154,13 +152,13 @@ function filterMeds(value) {
 
     // Loop through all list items, and hide those not matching the search query
 
-    let liElm, i, txtValue;
+    let gnElm, i, txtValue;
 
     for (i = base; i < loopSize; i++) {
 
-      liElm = li[i].children[0].children[0];
+      gnElm = li[i].firstElementChild;
 
-      txtValue = liElm.textContent || liElm.innerText;
+      txtValue = gnElm.textContent || gnElm.innerText;
 
       if (txtValue.toLowerCase().trim().indexOf(filter) > -1) {
         if (li[i].hasAttribute("style")) li[i].removeAttribute("style");
@@ -468,18 +466,15 @@ else {
 
     for (let i = 0; i < updationQueue.length; i++) {
       text = text +
-        `<li class="list-group-item d-flex ps-3 pb-3 ${updationQueue[i].avl ? "list-group-item-success" : "list-group-item-danger"}">
-            <div>${i + 1}. </div>
-            <div class="w-100">
+        `<li class="list-group-item ${updationQueue[i].avl ? "list-group-item-success" : "list-group-item-danger"}">
               <div class="h6">${updationQueue[i].gn}</div>
-              <div class="d-flex justify-content-between text-muted pe-2 mt-1">
+              <div class="detail text-muted">
                 <small>(${updationQueue[i].dc})</small>
                 <small>${updationQueue[i].us}</small>
                 <small>${updationQueue[i].mrp ? "Rs. " + updationQueue[i].mrp : "Under Processing"}</small>
                 <label class="fav"><input type="checkbox" name="fav" data-dc="${updationQueue[i].dc}" ${updationQueue[i].fav ? "checked" : ""}></label>
                 <input type="checkbox" name="avl" data-dc="${updationQueue[i].dc}" ${!updationQueue[i].avl ? "checked" : ""}>
               </div>
-            </div>
         </li>`;
     }
 
@@ -808,8 +803,7 @@ favNavBtn.addEventListener("click", function () {
 
     if (jsonMeds[i].fav) {
       text = text +
-        `<li class="list-group-item d-flex ps-3 pb-3 ${jsonMeds[i].avl ? "list-group-item-success" : "list-group-item-danger"}">
-          <div class="w-100">
+        `<li class="list-group-item ${jsonMeds[i].avl ? "list-group-item-success" : "list-group-item-danger"}">
             <div class="h6">${jsonMeds[i].gn}</div>
             <div class="detail text-muted">
               <small>(${jsonMeds[i].dc})</small>
@@ -817,8 +811,7 @@ favNavBtn.addEventListener("click", function () {
               <small>${jsonMeds[i].mrp ? "Rs. " + jsonMeds[i].mrp : "Under Processing"}</small>
               <label class="fav"><input type="checkbox" name="fav" data-dc="${jsonMeds[i].dc}" ${jsonMeds[i].fav ? "checked" : ""}></label>
               ${loggedIn ? `<input type="checkbox" name="avl" data-dc="${jsonMeds[i].dc}" ${jsonMedsAvl.find(item => jsonMeds[i].dc === item) ? "checked" : ""}>` : ""}
-            </div>
-          </div>
+            </div>   
         </li>`;
     }
   }

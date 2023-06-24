@@ -61,9 +61,9 @@ a#loginBtn:active {
 
 
 li.list-group-item {
-    display: flex;
-    padding-left: 0.5rem;
-
+    /* display: flex; */
+    padding-left: 1rem;
+    padding-bottom: 1rem;
 }
 
 li.list-group-item-danger {
@@ -202,8 +202,9 @@ div#favListDialog {
 }
 
 .modal-backdrop.show {
-    opacity: 0;
-    margin-top: 54px;
+    /* opacity: 0;
+    margin-top: 54px; */
+    display: none;
 }
 
 
