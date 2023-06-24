@@ -226,21 +226,21 @@
     aria-labelledby="favListDialogLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-sm-down">
       <div class="modal-content h-100">
-        <div class="modal-header text-center">
+        <!-- <div class="modal-header text-center">
           <div class="col-1"></div>
           <h4 class="modal-title col-10 text-primary h4" id="staticBackdropLabel">
             Favorite Meds List
           </h4>
           <button type="button" class="btn-close me-2 px-3" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body pt-0">
+        </div> -->
+        <div class="modal-body pt-0" style="padding:0 0.75rem;">
           <div id="favListDialogList" class="list-group list-group-flush d-grid gap-2 lh-base mt-3"></div>
         </div>
         <div class="modal-footer justify-content-evenly">
           <button id="btnFavSync" type="button" class="btn btn-primary px-3">
             <span id="btnFavSync-status" class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"
               style="display: none;"></span>
-            <span id="btnFavSync-text">Sync</span>
+            <span id="btnFavSync-text">Save</span>
             <span id="counterBtnFavSync" class="badge bg-light text-secondary ms-1"></span>
           </button>
           <button id="btnFavListDialogClose" type="button" class="btn btn-secondary" data-bs-dismiss="modal"
