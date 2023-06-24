@@ -428,13 +428,7 @@ if (!loggedIn) {
         btnFavSyncText.innerHTML = "Saved";
         btnFavSync.disabled = true;
       }, 1000);
-
     }
-
-
-
-
-
 
   });
 
