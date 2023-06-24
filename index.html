@@ -35,8 +35,8 @@
             <span class="visually-hidden">New favorites</span>
           </span>
         </button>
-        <button class="navbar-toggler hamburger hamburger--slider-r" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
+        <button id="toggleNavBtn" class="navbar-toggler hamburger hamburger--slider-r" type="button"
+          data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
           aria-label="Toggle Navigation">
           <script>
             // Look for .hamburger
@@ -134,17 +134,17 @@
   </div>
   <!-- Wrapper End -->
 
-  <!-- Modal - Updation Queue Dialog, Toggled by Update Queue Button(btnUpdationQueue)-->
-  <div class="modal fade bg-body" id="dialogUpdationQueue" data-bs-backdrop="static" data-bs-keyboard="false"
-    tabindex="-1" aria-labelledby="dialogUpdationQueueLabel" aria-hidden="true">
+  <!-- Modal - Updation Queue Dialog - Toggled by Update Queue Button(btnUpdationQueue)-->
+
+  <div class="modal fade bg-body" id="dialogUpdationQueue" style="--bs-modal-zindex: 1025;" data-bs-backdrop="static"
+    data-bs-keyboard="false" tabindex="-1" aria-labelledby="dialogUpdationQueueLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-sm-down">
       <div class="modal-content h-100">
-        <div class="modal-header text-center">
-          <div class="col-1"></div>
-          <h4 class="modal-title col-10 text-primary h4" id="staticBackdropLabel">
+        <div class="modal-header justify-content-center">
+          <h4 class="modal-title text-primary h4">
             Update Queue
           </h4>
-          <button type="button" class="btn-close me-2 px-3" data-bs-dismiss="modal" aria-label="Close"></button>
+          <!-- <button type="button" class="btn-close me-2 px-3" data-bs-dismiss="modal" aria-label="Close"></button> -->
         </div>
         <div class="modal-body pt-0">
           <div id="medlistUpdateQueueDialog" class="list-group list-group-flush d-grid gap-2 lh-base mt-3"></div>
@@ -163,10 +163,10 @@
     </div>
   </div>
 
-  <!-- Login Modal -->
+  <!-- Modal - Login -->
 
-  <div class="modal bg-body-secondary fade p-2 py-md-5" tabindex="-1" id="modalLogin" data-bs-backdrop="static"
-    data-bs-keyboard="false">
+  <div class="modal bg-body-secondary fade p-2 py-md-5" id="modalLogin" style="--bs-modal-zindex: 1025;"
+    data-bs-backdrop="static" tabindex="-1" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered">
 
       <div class="modal-content border-0 shadow">
@@ -214,14 +214,9 @@
       </div>
     </div>
   </div>
-  <div id="loaderBody" class="loaderBody-overlay" style="display: none; z-index:1040;">
-    <img class="position-fixed top-50 start-50 translate-middle" style="width:200px; height:200px;"
-      src="assets/images/loader.gif">
-    </img>
-    <style></style>
-  </div>
 
-  <!-- Modal - Favoutites List Dialog, Toggled by "Favorite" Navbar Button-->
+  <!-- Modal - Favoutites List Dialog - Toggled by "Favorite" Navbar Button-->
+
   <div class="modal fade bg-body" id="favListDialog" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="favListDialogLabel" aria-hidden="true" style="--bs-modal-zindex: 1025;">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-sm-down">
@@ -250,7 +245,12 @@
     </div>
   </div>
 
-
+  <div id="loaderBody" class="loaderBody-overlay" style="display: none; z-index:1065;">
+    <img class="position-fixed top-50 start-50 translate-middle" style="width:200px; height:200px;"
+      src="assets/images/loader.gif">
+    </img>
+    <style></style>
+  </div>
   <!-- JavaScript code files-->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"

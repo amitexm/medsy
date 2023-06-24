@@ -386,7 +386,11 @@ if (!loggedIn) {
   });
 
   const loaderBody = document.getElementById('loaderBody');
+  const toggleNavBtn = document.getElementById('toggleNavBtn');
+  const navbarContent = document.getElementById('navbarContent');
   loginBtn.addEventListener("click", () => {
+    toggleNavBtn.classList.remove("is-active");
+    navbarContent.classList.remove("show");
     let loginModal = new bootstrap.Modal('#modalLogin', {});
     loaderBody.style.display = "block";
     setTimeout(() => {
@@ -480,10 +484,9 @@ else {
               </div>
         </li>`;
     }
+    if (text) medlistUpdateQueueDialog.innerHTML = text;
 
-    if (text) {
-      medlistUpdateQueueDialog.innerHTML = text;
-    }
+    btnUpdate.disabled = updationQueue.length ? false : true;
   });
 
   medlistUpdateQueueDialog.addEventListener("click", function (e) {
@@ -499,11 +502,11 @@ else {
       // only remove med from updation queue on clicking checkboxs with name="avl". 
       if ("avl" === e.target.name) {
         // remove the med's parent container (li) element from updation queue dialog with a fade out effect.
-        e.target.parentElement.parentElement.parentElement.style.transition =
+        e.target.parentElement.parentElement.style.transition =
           "opacity 0.5s ease";
-        e.target.parentElement.parentElement.parentElement.style.opacity = 0;
+        e.target.parentElement.parentElement.style.opacity = 0;
 
-        setTimeout(() => { e.target.parentElement.parentElement.parentElement.remove() }, 500);
+        setTimeout(() => { e.target.parentElement.parentElement.remove() }, 500);
       }
     }
 
@@ -753,6 +756,8 @@ function editUpdationQueue(e) {
     let counterUpdationQueue = updationQueue.length ? updationQueue.length : "";
     counterBtnUpdationQueue.innerHTML = counterUpdationQueue;
     counterBtnUpdate.innerHTML = counterUpdationQueue;
+
+    btnUpdate.disabled = updationQueue.length ? false : true;
   }
 
   else if ("fav" === e.target.name) {
@@ -794,6 +799,8 @@ function editUpdationQueue(e) {
 
 favNavBtn.addEventListener("click", function () {
 
+  favNavBtn.classList.toggle("active");
+
   let text = "";
 
   for (let i = 0; i < jsonMeds.length; i++) {
@@ -815,7 +822,10 @@ favNavBtn.addEventListener("click", function () {
 
   btnFavSync.disabled = favQueue.length ? false : true;
 
+});
 
+btnFavSyncClose.addEventListener("click", function () {
+  favNavBtn.classList.toggle("active");
 });
 
 favListDialogList.addEventListener("click", function (e) {
