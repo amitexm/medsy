@@ -419,13 +419,22 @@ if (!loggedIn) {
 
 
   btnFavSync.addEventListener('click', async (e) => {
-    localStorage.setItem("fav", JSON.stringify(jsonMedsFav));
-    favQueue.length = 0;
-    counterFavNavBtn.style.display = "none";
-    btnFavSyncText.innerHTML = "Saved";
-    setTimeout(() => {
-      btnFavSyncText.innerHTML = "Save";
-    }, 1000);
+    if (favQueue.length) {
+      localStorage.setItem("fav", JSON.stringify(jsonMedsFav));
+      favQueue.length = 0;
+      counterFavNavBtn.style.display = "none";
+      btnFavSyncText.innerHTML = "Saving...";
+      setTimeout(() => {
+        btnFavSyncText.innerHTML = "Saved";
+        btnFavSync.disabled = true;
+      }, 1000);
+
+    }
+
+
+
+
+
 
   });
 
@@ -767,21 +776,15 @@ function editUpdationQueue(e) {
     }
 
     // Change favorite in favQueue -- Array of fovorited medicin Objects.
-    let dc_favQueueIndx = favQueue.findIndex((item) => item.dc === dc);
+    let dc_favQueueIndx = favQueue.findIndex((item) => item === dc);
     if (dc_favQueueIndx > -1) {
       favQueue.splice(dc_favQueueIndx, 1);
     } else {
-      let favMed = {
-        dc: dc,
-        gn: jsonMeds[dc_jsonMedsIndx].gn,
-        us: jsonMeds[dc_jsonMedsIndx].us,
-        mrp: jsonMeds[dc_jsonMedsIndx].mrp,
-        avl: jsonMeds[dc_jsonMedsIndx].avl,
-        fav: jsonMeds[dc_jsonMedsIndx].fav
-      };
-      favQueue.push(favMed);
+      favQueue.push(dc);
     }
     counterFavNavBtn.style.display = favQueue.length ? "block" : "none";
+    btnFavSync.disabled = favQueue.length ? false : true;
+
 
     // Change favorite in updationQueue -- Array of medicin Objects to change Availability.
     let dc_updationQueueIndx = updationQueue.findIndex((item) => item.dc === dc);
@@ -800,7 +803,6 @@ favNavBtn.addEventListener("click", function () {
   let text = "";
 
   for (let i = 0; i < jsonMeds.length; i++) {
-
     if (jsonMeds[i].fav) {
       text = text +
         `<li class="list-group-item ${jsonMeds[i].avl ? "list-group-item-success" : "list-group-item-danger"}">
@@ -815,16 +817,16 @@ favNavBtn.addEventListener("click", function () {
         </li>`;
     }
   }
+  favListDialogList.innerHTML = text;
 
-  if (text) {
-    favListDialogList.innerHTML = text;
-  }
+  btnFavSync.disabled = favQueue.length ? false : true;
+
+
 });
 
 favListDialogList.addEventListener("click", function (e) {
   if ("checkbox" === e.target.type) {
 
-    console.log("hello");
     // reusing the function to remove the clicked meds object from updationQueue[] array.
     editUpdationQueue(e);
 
