@@ -104,7 +104,7 @@ function listMeds(data, toAppend) {
         `<li data-dc="${data[i].dc}" class="list-group-item d-flex ps-3 pb-3 ${data[i].avl ? "list-group-item-success" : "list-group-item-danger"}">
           <div class="w-100">
             <div>${data[i].gn}</div>
-            <div class="d-flex justify-content-between text-muted pe-2 mt-1 text-center">
+            <div class="detail text-muted">
               <small>(${data[i].dc})</small>
               <small>${data[i].us}</small>
               <small>${data[i].mrp ? "Rs. " + data[i].mrp : "Under Processing"}</small>
@@ -811,7 +811,7 @@ favNavBtn.addEventListener("click", function () {
         `<li class="list-group-item d-flex ps-3 pb-3 ${jsonMeds[i].avl ? "list-group-item-success" : "list-group-item-danger"}">
           <div class="w-100">
             <div class="h6">${jsonMeds[i].gn}</div>
-            <div class="d-flex justify-content-between text-muted pe-2 mt-1">
+            <div class="detail text-muted">
               <small>(${jsonMeds[i].dc})</small>
               <small>${jsonMeds[i].us}</small>
               <small>${jsonMeds[i].mrp ? "Rs. " + jsonMeds[i].mrp : "Under Processing"}</small>

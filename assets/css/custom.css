@@ -77,6 +77,52 @@ li.list-group-item-success {
 }
 
 
+li.list-group-item .detail {
+    margin-top: 0.25rem;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 0.5rem;
+    text-align: center;
+}
+
+li.list-group-item .detail small:first-child {
+    margin-right: 5px;
+}
+
+li.list-group-item .detail small:nth-child(2) {
+    margin-right: 5px;
+}
+
+li.list-group-item .detail small:nth-child(3) {
+    margin-right: 10px;
+}
+
+li.list-group-item .detail .fav {
+    min-width: 20px;
+    align-self: center;
+    margin-right: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 input#passInput:valid,
 input#passInput:invalid {
     background-position: 83%;
