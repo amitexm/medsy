@@ -449,6 +449,7 @@ else {
   loginBtn.addEventListener("click", () => {
     loaderBody.style.display = "block";
     localStorage.removeItem("gt");
+    localStorage.setItem("fav", JSON.stringify(jsonMedsFav));
     setTimeout(() => {
       loaderBody.style.display = "none";
       window.location.reload();
