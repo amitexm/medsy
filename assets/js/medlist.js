@@ -783,6 +783,7 @@ function editUpdationQueue(e) {
       favQueue.push(dc);
     }
     counterFavNavBtn.style.display = favQueue.length ? "block" : "none";
+    btnFavSyncText.innerHTML = "Save";
     btnFavSync.disabled = favQueue.length ? false : true;
 
 
@@ -803,7 +804,6 @@ favNavBtn.addEventListener("click", function () {
   favNavBtn.classList.toggle("active");
 
   let text = "";
-
   for (let i = 0; i < jsonMeds.length; i++) {
     if (jsonMeds[i].fav) {
       text = text +
@@ -822,7 +822,6 @@ favNavBtn.addEventListener("click", function () {
   favListDialogList.innerHTML = text;
 
   btnFavSync.disabled = favQueue.length ? false : true;
-
 });
 
 btnFavSyncClose.addEventListener("click", function () {
