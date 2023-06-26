@@ -463,16 +463,19 @@ else {
   /*** Logged In Operations */
 
   const btnUpdationQueue = document.getElementById("btnUpdationQueue");
-  var counterBtnUpdationQueue = document.getElementById("counterBtnUpdationQueue");
+  const counterBtnUpdationQueue = document.getElementById("counterBtnUpdationQueue");
   const medlistUpdateQueueDialog = document.getElementById("medlistUpdateQueueDialog");
+  const dialogUpdationQueue = document.getElementById('dialogUpdationQueue');
   const btnUpdate = document.getElementById("btnUpdate");
   const counterBtnUpdate = document.getElementById("counterBtnUpdate");
 
 
   btnUpdationQueue.addEventListener("click", function () {
 
-    let text = "";
+  });
 
+  dialogUpdationQueue.addEventListener('show.bs.modal', () => {
+    let text = "";
     for (let i = 0; i < updationQueue.length; i++) {
       text = text +
         `<li class="list-group-item ${updationQueue[i].avl ? "list-group-item-success" : "list-group-item-danger"}">
@@ -802,6 +805,11 @@ function editUpdationQueue(e) {
 
 favNavBtn.addEventListener("click", function () {
 
+});
+
+favListDialog.addEventListener('show.bs.modal', () => {
+  favNavBtn.classList.add("active");
+
   let text = "";
   for (let i = 0; i < jsonMeds.length; i++) {
     if (jsonMeds[i].fav) {
@@ -820,15 +828,11 @@ favNavBtn.addEventListener("click", function () {
   }
   favListDialogList.innerHTML = text;
 
-});
-
-favListDialog.addEventListener('shown.bs.modal', () => {
-  favNavBtn.classList.toggle("active");
   btnFavSync.disabled = favQueue.length ? false : true;
 });
 
-btnFavSyncClose.addEventListener("click", function () {
-  favNavBtn.classList.toggle("active");
+favListDialog.addEventListener('hide.bs.modal', () => {
+  favNavBtn.classList.remove("active");
 });
 
 favListDialogList.addEventListener("click", function (e) {
@@ -849,8 +853,6 @@ favListDialogList.addEventListener("click", function (e) {
 
 
 const myModals = document.querySelectorAll('.modal');
-// const myModal = document.getElementById('favListDialog');
-
 myModals.forEach(modal => {
   if (modal.dataset.hash) {
     modal.addEventListener('shown.bs.modal', () => {
@@ -860,16 +862,20 @@ myModals.forEach(modal => {
 });
 
 
+const modalLogin = new bootstrap.Modal('#modalLogin');
+const modalUpdationQueue = new bootstrap.Modal('#dialogUpdationQueue');
 const modalFav = new bootstrap.Modal('#favListDialog');
-window.addEventListener('hashchange', () => {
-
-  console.log('hash changed.');
-
+window.addEventListener('hashchange', (e) => {
   if (window.location.hash === "") {
-
     modalFav.hide();
-
-    console.log('hidden');
+    modalLogin.hide();
+    modalUpdationQueue.hide();
+  } else if (window.location.hash === "#favorites") {
+    modalFav.show();
+  } else if (window.location.hash === "#login") {
+    modalLogin.show();
+  } else if (window.location.hash === "#updationQueue" && loggedIn) {
+    modalUpdationQueue.show();
   }
 });
 
