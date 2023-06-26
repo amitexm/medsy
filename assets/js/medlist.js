@@ -861,7 +861,6 @@ myModals.forEach(modal => {
   }
 });
 
-
 const modalLogin = new bootstrap.Modal('#modalLogin');
 const modalUpdationQueue = new bootstrap.Modal('#dialogUpdationQueue');
 const modalFav = new bootstrap.Modal('#favListDialog');
@@ -870,13 +869,14 @@ window.addEventListener('hashchange', (e) => {
     modalFav.hide();
     modalLogin.hide();
     modalUpdationQueue.hide();
-  } else if (window.location.hash === "#favorites") {
-    modalFav.show();
-  } else if (window.location.hash === "#login") {
-    modalLogin.show();
-  } else if (window.location.hash === "#updationQueue" && loggedIn) {
-    modalUpdationQueue.show();
   }
+  // else if (window.location.hash === "#favorites") {
+  //   modalFav.show();
+  // } else if (window.location.hash === "#login") {
+  //   modalLogin.show();
+  // } else if (window.location.hash === "#updationQueue" && loggedIn) {
+  //   modalUpdationQueue.show();
+  // }
 });
 
 
