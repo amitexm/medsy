@@ -240,6 +240,7 @@ const loginBtn = document.getElementById("loginBtn");
 const favNavBtn = document.getElementById("favNavBtn");
 const counterFavNavBtn = document.getElementById("counterFavNavBtn");
 const favListDialogList = document.getElementById("favListDialogList");
+const favListDialog = document.getElementById('favListDialog');
 
 const btnFavSync = document.getElementById("btnFavSync");
 const btnFavSyncText = btnFavSync.querySelector('#btnFavSync-text');
@@ -801,8 +802,6 @@ function editUpdationQueue(e) {
 
 favNavBtn.addEventListener("click", function () {
 
-  favNavBtn.classList.toggle("active");
-
   let text = "";
   for (let i = 0; i < jsonMeds.length; i++) {
     if (jsonMeds[i].fav) {
@@ -821,6 +820,10 @@ favNavBtn.addEventListener("click", function () {
   }
   favListDialogList.innerHTML = text;
 
+});
+
+favListDialog.addEventListener('shown.bs.modal', () => {
+  favNavBtn.classList.toggle("active");
   btnFavSync.disabled = favQueue.length ? false : true;
 });
 
@@ -845,6 +848,30 @@ favListDialogList.addEventListener("click", function (e) {
 });
 
 
+const myModals = document.querySelectorAll('.modal');
+// const myModal = document.getElementById('favListDialog');
+
+myModals.forEach(modal => {
+  if (modal.dataset.hash) {
+    modal.addEventListener('shown.bs.modal', () => {
+      window.location.hash = modal.dataset.hash;
+    });
+  }
+});
+
+
+const modalFav = new bootstrap.Modal('#favListDialog');
+window.addEventListener('hashchange', () => {
+
+  console.log('hash changed.');
+
+  if (window.location.hash === "") {
+
+    modalFav.hide();
+
+    console.log('hidden');
+  }
+});
 
 
 
