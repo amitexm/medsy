@@ -542,15 +542,15 @@ else {
       btnUpdate.disabled = true;
       btnUpdateText.innerHTML = "Updating...";
 
-      setTimeout(() => {
-        btnClose.addEventListener('click', function btnCloseHandler() {
-          btnUpdate.disabled = false;
-          btnUpdateText.innerHTML = "Update";
-          btnUpdate.style.backgroundColor = "#5757E7";
-          btnUpdateStatus.style.display = "none";
-          this.removeEventListener('click', btnCloseHandler);
-        });
-      }, 2000);
+      // setTimeout(() => {
+      //   btnClose.addEventListener('click', function btnCloseHandler() {
+      //     btnUpdate.disabled = false;
+      //     btnUpdateText.innerHTML = "Update";
+      //     btnUpdate.style.backgroundColor = "#5757E7";
+      //     btnUpdateStatus.style.display = "none";
+      //     this.removeEventListener('click', btnCloseHandler);
+      //   });
+      // }, 2000);
 
 
       const path = "assets/json/meds-avl-min.json";
@@ -621,15 +621,15 @@ else {
       btnFavSync.disabled = true;
       btnFavSyncText.innerHTML = "Saving...";
 
-      setTimeout(() => {
-        btnFavSyncClose.addEventListener('click', function btnCloseHandler() {
-          btnFavSync.disabled = false;
-          btnFavSyncText.innerHTML = "Save";
-          btnFavSync.style.backgroundColor = "#5757E7";
-          btnFavSyncStatus.style.display = "none";
-          this.removeEventListener('click', btnCloseHandler);
-        });
-      }, 2000);
+      // setTimeout(() => {
+      //   btnFavSyncClose.addEventListener('click', function btnCloseHandler() {
+      //     btnFavSync.disabled = false;
+      //     btnFavSyncText.innerHTML = "Save";
+      //     btnFavSync.style.backgroundColor = "#5757E7";
+      //     btnFavSyncStatus.style.display = "none";
+      //     this.removeEventListener('click', btnCloseHandler);
+      //   });
+      // }, 2000);
 
 
       const path = "assets/json/meds-fav-min.json";
