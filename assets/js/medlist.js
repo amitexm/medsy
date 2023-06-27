@@ -236,6 +236,8 @@ fetchData().then((data) => {
 
 
 const loginBtn = document.getElementById("loginBtn");
+const dialogLogin = document.getElementById('dialogLogin');
+const btnCloseLoginDialog = document.getElementById('btnCloseLoginDialog');
 
 const favNavBtn = document.getElementById("favNavBtn");
 const counterFavNavBtn = document.getElementById("counterFavNavBtn");
@@ -245,7 +247,7 @@ const favListDialog = document.getElementById('favListDialog');
 const btnFavSync = document.getElementById("btnFavSync");
 const btnFavSyncText = btnFavSync.querySelector('#btnFavSync-text');
 const btnFavSyncStatus = btnFavSync.querySelector('#btnFavSync-status');
-const btnFavSyncClose = document.querySelector('#btnFavListDialogClose');
+const btnCloseFavDialog = document.querySelector('#btnCloseFavDialog');
 
 if (!loggedIn) {
 
@@ -377,8 +379,7 @@ if (!loggedIn) {
     }
   }
 
-  const modalLogin = document.getElementById('modalLogin');
-  modalLogin.addEventListener('hidden.bs.modal', () => {
+  dialogLogin.addEventListener('hidden.bs.modal', () => {
     loginForm.classList.remove("was-validated");
     loginForm.elements.submitBtn.disabled = false;
     loginForm.elements.submitBtn.innerHTML = "Sign In";
@@ -392,11 +393,11 @@ if (!loggedIn) {
   loginBtn.addEventListener("click", () => {
     toggleNavBtn.classList.remove("is-active");
     navbarContent.classList.remove("show");
-    let loginModal = new bootstrap.Modal('#modalLogin', {});
+    let modalLogin = new bootstrap.Modal('#dialogLogin', {});
     loaderBody.style.display = "block";
     setTimeout(() => {
       loaderBody.style.display = "none";
-      loginModal.show();
+      modalLogin.show();
     }, 500);
   });
 
@@ -521,7 +522,7 @@ else {
 
   const btnUpdateText = btnUpdate.querySelector('#updateBtn-text');
   const btnUpdateStatus = btnUpdate.querySelector('#btnUpdate-status');
-  const btnClose = document.querySelector('#btnClose');
+  const btnCloseDialogUpdationQueue = document.querySelector('#btnCloseDialogUpdationQueue');
   btnUpdate.addEventListener('click', async (e) => {
 
     if (typeof (updateAlert) !== "undefined") {
@@ -543,7 +544,7 @@ else {
       btnUpdateText.innerHTML = "Updating...";
 
       // setTimeout(() => {
-      //   btnClose.addEventListener('click', function btnCloseHandler() {
+      //   btnCloseDialogUpdationQueue.addEventListener('click', function btnCloseHandler() {
       //     btnUpdate.disabled = false;
       //     btnUpdateText.innerHTML = "Update";
       //     btnUpdate.style.backgroundColor = "#5757E7";
@@ -574,7 +575,7 @@ else {
         btnUpdate.style.backgroundColor = "#5757E7";
         btnUpdate.disabled = true;
         btnUpdateText.innerHTML = "Updated";
-        btnClose.innerHTML = "Close";
+        btnCloseDialogUpdationQueue.innerHTML = "Close";
         btnUpdateStatus.style.display = "none";
 
       } else {
@@ -622,7 +623,7 @@ else {
       btnFavSyncText.innerHTML = "Saving...";
 
       // setTimeout(() => {
-      //   btnFavSyncClose.addEventListener('click', function btnCloseHandler() {
+      //   btnCloseFavDialog.addEventListener('click', function btnCloseHandler() {
       //     btnFavSync.disabled = false;
       //     btnFavSyncText.innerHTML = "Save";
       //     btnFavSync.style.backgroundColor = "#5757E7";
@@ -658,7 +659,7 @@ else {
         btnFavSync.style.backgroundColor = "#5757E7";
         btnFavSync.disabled = true;
         btnFavSyncText.innerHTML = "Saved";
-        btnFavSyncClose.innerHTML = "Close";
+        btnCloseFavDialog.innerHTML = "Close";
         btnFavSyncStatus.style.display = "none";
 
       } else {
@@ -803,10 +804,6 @@ function editUpdationQueue(e) {
 }
 
 
-favNavBtn.addEventListener("click", function () {
-
-});
-
 favListDialog.addEventListener('show.bs.modal', () => {
   favNavBtn.classList.add("active");
 
@@ -831,10 +828,6 @@ favListDialog.addEventListener('show.bs.modal', () => {
   btnFavSync.disabled = favQueue.length ? false : true;
 });
 
-favListDialog.addEventListener('hide.bs.modal', () => {
-  favNavBtn.classList.remove("active");
-});
-
 favListDialogList.addEventListener("click", function (e) {
   if ("checkbox" === e.target.type) {
 
@@ -852,23 +845,80 @@ favListDialogList.addEventListener("click", function (e) {
 });
 
 
+favListDialog.addEventListener('hide.bs.modal', () => {
+  favNavBtn.classList.remove("active");
+  // if (window.location.hash != '') {
+  //   history.back();
+  // }
+
+  // let noHashURL = window.location.href.replace(/#.*$/, '');
+  // window.history.replaceState('', document.title, noHashURL)
+});
+
+// [dialogLogin, dialogUpdationQueue].forEach((dialog) => {
+//   dialog.addEventListener('hide.bs.modal', () => {
+//     if (window.location.hash != '') {
+//       history.back();
+//     }
+//   });
+// });
+
+
+favNavBtn.addEventListener('click', () => {
+
+  if (!favNavBtn.classList.contains("active")) {
+    history.back();
+  }
+});
+
+[btnCloseFavDialog, btnCloseDialogUpdationQueue, btnCloseLoginDialog].forEach((btn) => {
+  btn.addEventListener('click', () => {
+    history.back();
+  });
+});
+
+// btnCloseFavDialog.addEventListener('click', () => {
+//   history.back();
+
+// });
+
+// btnCloseDialogUpdationQueue.addEventListener('click', () => {
+//   history.back();
+
+// });
+
+
+
 const myModals = document.querySelectorAll('.modal');
 myModals.forEach(modal => {
   if (modal.dataset.hash) {
-    modal.addEventListener('shown.bs.modal', () => {
+    modal.addEventListener('show.bs.modal', () => {
       window.location.hash = modal.dataset.hash;
     });
   }
 });
 
-const modalLogin = new bootstrap.Modal('#modalLogin');
+const modalLogin = new bootstrap.Modal('#dialogLogin');
 const modalUpdationQueue = new bootstrap.Modal('#dialogUpdationQueue');
 const modalFav = new bootstrap.Modal('#favListDialog');
 window.addEventListener('hashchange', (e) => {
-  if (window.location.hash === "") {
+  if (window.location.hash === "" || window.location.hash === "#updationQueue" || window.location.hash === "#login") {
+
+    if (window.location.hash === "#updationQueue" && e.oldURL.includes("#favorites")) {
+      history.back();
+    }
+
+    if (window.location.hash === "#login" && e.oldURL.includes("#favorites")) {
+      history.back();
+    }
+
+    console.log('hash changed');
+
     modalFav.hide();
     modalLogin.hide();
     modalUpdationQueue.hide();
+
+    // 
   }
   // else if (window.location.hash === "#favorites") {
   //   modalFav.show();

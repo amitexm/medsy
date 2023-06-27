@@ -157,7 +157,7 @@
             <span id="updateBtn-text">Update</span>
             <span id="counterBtnUpdate" class="badge bg-light text-secondary ms-1"></span>
           </button>
-          <button id="btnClose" type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+          <button id="btnCloseDialogUpdationQueue" type="button" class="btn btn-secondary" data-bs-dismiss="modal"
             aria-label="Close">Close</button>
         </div>
       </div>
@@ -166,7 +166,7 @@
 
   <!-- Modal - Login -->
 
-  <div class="modal bg-body-secondary fade p-2 py-md-5" id="modalLogin" data-hash="login"
+  <div class="modal bg-body-secondary fade p-2 py-md-5" id="dialogLogin" data-hash="login"
     style="--bs-modal-zindex: 1025;" data-bs-backdrop="static" tabindex="-1" data-bs-keyboard="false">
     <div class="modal-dialog modal-dialog-centered">
 
@@ -174,7 +174,8 @@
 
         <div class="modal-header p-4 pb-4 border-bottom-0">
           <h1 class="mb-0 fs-1 ms-2 fw-normal">Login</h1>
-          <button type="button" class="btn-close p-3" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button id="btnCloseLoginDialog" type="button" class="btn-close p-3" data-bs-dismiss="modal"
+            aria-label="Close"></button>
         </div>
 
         <div class="modal-body p-4 pt-0">
@@ -240,7 +241,7 @@
             <span id="btnFavSync-text">Save</span>
             <span id="counterBtnFavSync" class="badge bg-light text-secondary ms-1"></span>
           </button>
-          <button id="btnFavListDialogClose" type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+          <button id="btnCloseFavDialog" type="button" class="btn btn-secondary" data-bs-dismiss="modal"
             aria-label="Close">Close</button>
         </div>
       </div>
