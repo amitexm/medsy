@@ -82,7 +82,7 @@ function listMeds(data, toAppend) {
 
   const arrLength = data.length;
 
-  divideInto = 6;
+  divideInto = 12;
 
   chunkSize = Math.trunc(arrLength / divideInto);
 
@@ -96,7 +96,7 @@ function listMeds(data, toAppend) {
 
   setTimeout(function generateRows() {
     const base = chunkSize * iteration;
-    const loopSize = iteration != 6 ? base + chunkSize : base + rem;
+    const loopSize = iteration != divideInto ? base + chunkSize : base + rem;
     let text = "";
 
     for (let i = base; i < loopSize; i++) {
@@ -128,10 +128,10 @@ function listMeds(data, toAppend) {
       if (medlistSearchBox.value.trim() !== "") {
         medlistSearchBox.dispatchEvent(new Event("input", { bubbles: true }));
       }
-
+      // initializing values for filtermeds only after medlist is generated
       // One time initialization for filtermeds() to prevent reinitialization on every search box value entered
       li = medlistList.getElementsByTagName("li");
-      liCount = li.length; divideInto = 6;
+      liCount = li.length; divideInto = 12;
       chunkSize = Math.trunc(liCount / divideInto); rem = liCount % divideInto;
       iterations = !rem ? divideInto : divideInto + 1;
     }
