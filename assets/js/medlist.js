@@ -201,6 +201,8 @@ fetchData().then((data) => {
       filterMeds(value);
     }, 300);
 
+    if (value.length != 0) { window.location.hash = "search"; }
+
     document.documentElement.scrollTop = 0;
 
   });
@@ -210,6 +212,13 @@ fetchData().then((data) => {
   medlistSearchBoxClear.addEventListener("click", () => {
     medlistSearchBox.value = "";
     medlistSearchBox.dispatchEvent(new Event("input", { bubbles: true }));
+    if (window.location.hash != '') {
+      history.back();
+    }
+
+
+
+
   });
 
   // jsonMedsData = jsonMeds.map(item => {
@@ -906,7 +915,7 @@ myModals.forEach(modal => {
 
 
 window.addEventListener('hashchange', (e) => {
-  if (window.location.hash === "" || window.location.hash === "#updationQueue" || window.location.hash === "#login") {
+  if (window.location.hash === "" || window.location.hash === "#updationQueue" || window.location.hash === "#login" || window.location.hash === "#search") {
 
     // go home directly if favorite modal was opened after updation queue modal on closing favorite modal
     if (window.location.hash === "#updationQueue" && e.oldURL.includes("#favorites")) {
@@ -917,6 +926,12 @@ window.addEventListener('hashchange', (e) => {
     if (window.location.hash === "#login" && e.oldURL.includes("#favorites")) {
       history.back();
     }
+
+    // Go back to Home from an ongoing search 
+    if (medlistSearchBox.value != '' && window.location.hash != '#search' && window.location.hash != '#login') {
+      medlistSearchBoxClear.dispatchEvent(new Event("click", { bubbles: true }));
+    }
+
 
     modalFav.hide();
     modalLogin.hide();
