@@ -238,16 +238,20 @@ fetchData().then((data) => {
 const loginBtn = document.getElementById("loginBtn");
 const dialogLogin = document.getElementById('dialogLogin');
 const btnCloseLoginDialog = document.getElementById('btnCloseLoginDialog');
+const modalLogin = new bootstrap.Modal('#dialogLogin');
 
 const favNavBtn = document.getElementById("favNavBtn");
 const counterFavNavBtn = document.getElementById("counterFavNavBtn");
 const favListDialogList = document.getElementById("favListDialogList");
 const favListDialog = document.getElementById('favListDialog');
+const modalFav = new bootstrap.Modal('#favListDialog');
 
 const btnFavSync = document.getElementById("btnFavSync");
 const btnFavSyncText = btnFavSync.querySelector('#btnFavSync-text');
 const btnFavSyncStatus = btnFavSync.querySelector('#btnFavSync-status');
 const btnCloseFavDialog = document.querySelector('#btnCloseFavDialog');
+
+const modalUpdationQueue = new bootstrap.Modal('#dialogUpdationQueue');
 
 if (!loggedIn) {
 
@@ -393,7 +397,7 @@ if (!loggedIn) {
   loginBtn.addEventListener("click", () => {
     toggleNavBtn.classList.remove("is-active");
     navbarContent.classList.remove("show");
-    let modalLogin = new bootstrap.Modal('#dialogLogin', {});
+    // let modalLogin = new bootstrap.Modal('#dialogLogin', {});
     loaderBody.style.display = "block";
     setTimeout(() => {
       loaderBody.style.display = "none";
@@ -898,21 +902,21 @@ myModals.forEach(modal => {
   }
 });
 
-const modalLogin = new bootstrap.Modal('#dialogLogin');
-const modalUpdationQueue = new bootstrap.Modal('#dialogUpdationQueue');
-const modalFav = new bootstrap.Modal('#favListDialog');
+
+
+
 window.addEventListener('hashchange', (e) => {
   if (window.location.hash === "" || window.location.hash === "#updationQueue" || window.location.hash === "#login") {
 
+    // go home directly if favorite modal was opened after updation queue modal on closing favorite modal
     if (window.location.hash === "#updationQueue" && e.oldURL.includes("#favorites")) {
       history.back();
     }
 
+    // go home directly if favorite modal was opened after login modal on closing favorite modal
     if (window.location.hash === "#login" && e.oldURL.includes("#favorites")) {
       history.back();
     }
-
-    console.log('hash changed');
 
     modalFav.hide();
     modalLogin.hide();
