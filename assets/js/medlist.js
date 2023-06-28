@@ -305,9 +305,15 @@ if (!loggedIn) {
           localStorage.setItem("gt", gt);
           event.target.elements.submitBtn.innerHTML = `<span class="spinner-border spinner-border-sm" style="margin-right:5px; margin-bottom:2px;" role="status"
           aria-hidden="true"></span>Redirecting . .`;
+          // const noHashURL = window.location.href.replace(/#.*$/, '');
+          // window.history.replaceState('', document.title, noHashURL)
           setTimeout(() => {
-            window.location.reload();
-          }, 2000);
+            history.back();
+            setTimeout(() => {
+              window.location.reload();
+            }, 500);
+          }, 1500);
+
 
         } else {
 
@@ -928,7 +934,7 @@ window.addEventListener('hashchange', (e) => {
     }
 
     // Go back to Home from an ongoing search 
-    if (medlistSearchBox.value != '' && window.location.hash != '#search' && window.location.hash != '#login') {
+    if (medlistSearchBox.value != '' && window.location.hash != '#search' && window.location.hash != '#login' && window.location.hash != '#updationQueue') {
       medlistSearchBoxClear.dispatchEvent(new Event("click", { bubbles: true }));
     }
 
