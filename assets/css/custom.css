@@ -31,6 +31,7 @@
     font-family: -webkit-pictograph;
     font-weight: 600;
     color: #6d48e5 !important;
+    flex-grow: 1;
 }
 
 .navbar .navbar-toggler {
