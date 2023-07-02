@@ -205,9 +205,15 @@ fetchData().then((data) => {
 
     clearTimeout(timer);
 
-    timer = setTimeout(() => {
+    if (input.closeBtn) {
       filterMeds(value);
-    }, 300);
+    }
+    else {
+      timer = setTimeout(() => {
+        filterMeds(value);
+      }, 200);
+    }
+
 
     if (value.length != 0) { window.location.hash = "search"; }
 
@@ -219,7 +225,10 @@ fetchData().then((data) => {
 
   medlistSearchBoxClear.addEventListener("click", () => {
     medlistSearchBox.value = "";
-    medlistSearchBox.dispatchEvent(new Event("input", { bubbles: true }));
+    const event = new Event("input", { bubbles: true });
+    event.closeBtn = true;
+    medlistSearchBox.dispatchEvent(event);
+
     if (window.location.hash != '') {
       history.back();
     }
@@ -943,7 +952,9 @@ window.addEventListener('hashchange', (e) => {
 
     // Go back to Home from an ongoing search 
     if (medlistSearchBox.value != '' && window.location.hash != '#search' && window.location.hash != '#login' && window.location.hash != '#updationQueue') {
-      medlistSearchBoxClear.dispatchEvent(new Event("click", { bubbles: true }));
+      const event = new Event("click", { bubbles: true });
+      event.closeBtn = true;
+      medlistSearchBoxClear.dispatchEvent(event);
     }
 
 
