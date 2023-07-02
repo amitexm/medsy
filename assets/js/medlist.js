@@ -161,10 +161,18 @@ function filterMeds(value) {
       txtValue = gnElm.textContent || gnElm.innerText;
 
       if (txtValue.toLowerCase().trim().indexOf(filter) > -1) {
-        if (li[i].hasAttribute("style")) li[i].removeAttribute("style");
-      } else if (!li[i].hasAttribute("style")) {
-        li[i].setAttribute("style", "display:none!important");
+        if (li[i].style.display === "none") li[i].style.display = "block";
       }
+      else if (li[i].style.display != "none") {
+        li[i].style.display = "none";
+      }
+
+
+      // if (txtValue.toLowerCase().trim().indexOf(filter) > -1) {
+      //   if (li[i].hasAttribute("style")) li[i].removeAttribute("style");
+      // } else if (!li[i].hasAttribute("style")) {
+      //   li[i].setAttribute("style", "display:none!important");
+      // }
     }
 
     iteration++;
