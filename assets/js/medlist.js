@@ -82,7 +82,7 @@ function listMeds(data, toAppend) {
 
   const arrLength = data.length;
 
-  divideInto = 48;
+  divideInto = 12;
 
   chunkSize = Math.trunc(arrLength / divideInto);
 
@@ -131,7 +131,7 @@ function listMeds(data, toAppend) {
       // initializing values for filtermeds only after medlist is generated
       // One time initialization for filtermeds() to prevent reinitialization on every search box value entered
       li = medlistList.getElementsByTagName("li");
-      liCount = li.length; divideInto = 48;
+      liCount = li.length; divideInto = 12;
       chunkSize = Math.trunc(liCount / divideInto); rem = liCount % divideInto;
       iterations = !rem ? divideInto : divideInto + 1;
     }
