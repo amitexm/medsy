@@ -1,4 +1,6 @@
-import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
+//import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
+import { Octokit } from "https://esm.sh/@octokit/core";
+
 let octokit;
 // login,pass => janaushadhi,janaushadhimrj;
 
