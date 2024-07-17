@@ -2,7 +2,7 @@
 import { Octokit } from "https://esm.sh/@octokit/core";
 
 let octokit;
-// login,pass => janaushadhi,janaushadhimrj;
+// lp => janaushadhi,janaushadhimrj;
 
 const loggedIn = localStorage.getItem("gt") ? true : false;
 const fav = localStorage.getItem("fav");
