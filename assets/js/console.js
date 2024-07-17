@@ -9,7 +9,7 @@ for (let i = 1; i < loopSize; i++) {
         dc: tr[i].children[1].innerHTML,
         gn: tr[i].children[2].innerHTML,
         us: tr[i].children[3].innerHTML,
-        mrp: Math.trunc(+tr[i].children[4].innerHTML)
+        mrp: Math.trunc(tr[i].children[4].innerHTML)
     };
 }
 console.log(JSON.stringify(medsData.sort((a, b) => a.dc - b.dc)));
